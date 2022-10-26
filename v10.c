@@ -179,7 +179,12 @@ public node v10 {
         length: 100.5 * units.inch,
         impulse_response: ir_lib.mild_exhaust_0_reverb
     )
-
+    piston_parameters piston_params(
+        mass: (100) * units.g, // 414 - piston mass, 152 - pin weight
+        compression_height: 1.0 * units.in,
+        wrist_pin_position: 0.0,
+        displacement: 0.0
+    )
     b0
         .add_cylinder(
             piston: piston(piston_params, blowby: k_28inH2O(0.0)),
