@@ -1,0 +1,22 @@
+import "engine_sim.mr"
+
+units units()
+constants constants()
+impulse_response_library ir_lib()
+
+public node v10 {
+    alias output __out: engine;
+
+    wires wires()
+
+    engine engine(
+        name: "v10",
+        starter_torque: 200* units.lb_ft,
+        redline: 20000*units.rpm,
+        fuel: fuel(
+            max_turbulence_effect:4.0,
+            burning_efficiency_randomness: 0.2,
+            max_burning_efficiency: 0.85)
+        )
+    )
+}
